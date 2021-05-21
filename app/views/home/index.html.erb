@@ -4,7 +4,10 @@
   hotwired
 </h1>
 <div class="hotwired border rounded-lg">
-	<%= 5.times do %>
-	  <%= render 'shared/current_user_name', random_string: SecureRandom.uuid %>
-	<% end %>	
+ <%= turbo_stream_from "user_notifications"  %>
+  <%= turbo_frame_tag "user_notifications" do %>
+		<% 5.times do %>
+		  <%= render 'shared/display_string', random_string: SecureRandom.uuid %>
+		<% end %>
+	<% end %>
 </div>
