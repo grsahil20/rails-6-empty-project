@@ -1,0 +1,10 @@
+<h1>Home Index</h1>
+
+<h1 class="border rounded-lg">
+  hotwired
+</h1>
+<div class="hotwired border rounded-lg">
+	<%= 5.times do %>
+	  <%= render 'shared/current_user_name', random_string: SecureRandom.uuid %>
+	<% end %>	
+</div>
